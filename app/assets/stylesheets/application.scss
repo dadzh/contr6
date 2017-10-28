@@ -1,1 +1,21 @@
 @import "bootstrap";
+.simple_form textarea{
+  margin-left: 90px;
+  width: 200px;
+}
+
+.simple_form select{
+  margin-left: 90px;
+  width: 200px;
+}
+
+.simple_form input {
+  margin-left: 90px;
+  width: 200px;
+}
+
+.simple_form label {
+  width: 100px;
+  text-align: left;
+  margin: 3px 90px;
+}

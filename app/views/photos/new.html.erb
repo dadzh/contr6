@@ -1,2 +1,7 @@
-<h1>Photos#new</h1>
-<p>Find me in app/views/photos/new.html.erb</p>
+<%= simple_form_for @notice do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.input :avatar, as: :text %>
+  <%= f.input :contacts, required: true %>
+  <%= f.input :category, :collection => Category.all,:label_method => :name,:value_method => :id,:include_blank => false %>
+  <%= f.button :submit %>
+<% end %>
