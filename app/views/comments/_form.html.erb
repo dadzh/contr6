@@ -1,0 +1,11 @@
+<%= form_for [@photo, @photo.comments.build] do |f| %>
+    <div>
+      Text: <%= f.text_area :body %>
+    </div>
+    <div>
+      Score: <%= f.select :score, @select_list %>
+    </div>
+
+    <%= f.submit %>
+<% end %>
+

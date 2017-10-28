@@ -4,12 +4,13 @@
   <a target="_blank">
     <%= image_tag photo.avatar.thumb.url %>
     <div class="desc">
-      <% if current_user.try(:admin?) %>
+      <% if current_user.try(:admin?) or user_signed_in? %>
         <%= link_to photo.name, photo_path(photo) %></p>
+        By: <%= link_to photo.user.name, user_path(photo.user) %>
       <% else %>
         <p><%= photo.name %></p>
-      <% end %>
         <p>By:<%= photo.user.name %></p>
+      <% end %>
       </div>
   </a>
 </div>
