@@ -1,18 +1,16 @@
-<h1>Photo Gallery</h1> 
-	<p id="notice"><%= notice %></p>     
-  <div class="row">
-    <div class="col-sm-7">
-      <% @photos.each do |photo| %>
-        <div class="container-fluid" style="border:1px solid;">
-       		<%= image_tag(photo.avatar.url,size:"213") %>
-          <% if current_user.try(:admin?) %>
-            <p><%= link_to photo.name, photo_path(photo) %></p>
-          <% else %>
-            <p><%= photo.name %></p>
-						<p>By:<%= photo.user.name %></p>
-          <% end %>
-        </div>
+
+<% @photos.each do |photo| %>
+<div class="gallery">
+  <a target="_blank">
+    <%= image_tag photo.avatar.thumb.url %>
+    <div class="desc">
+      <% if current_user.try(:admin?) %>
+        <%= link_to photo.name, photo_path(photo) %></p>
+      <% else %>
+        <p><%= photo.name %></p>
       <% end %>
-    </div>
-  </div>
+        <p>By:<%= photo.user.name %></p>
+      </div>
+  </a>
 </div>
+<% end %>
